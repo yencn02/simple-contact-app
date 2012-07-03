@@ -1,0 +1,27 @@
+<h1>Contact</h1>
+<%= form_tag pages_path, :method => :post, :id => "contact-form" do %>
+<% if flash[:notice] %>
+<h4 class="notice"> <%= flash[:notice] %> </h4>
+<% end %>
+  <ul>
+    <li>
+      <b>Name:</b><span class="error name" style="display:none"> This field is required</span><br />
+      <input type="text" name="name" />
+    </li>
+    <li>
+      <b>EMail:</b><span class="error email" style="display:none"> This field is required</span><br />
+      <input type="text" name="email"/>
+    </li>
+    <li>
+      <b>Thema:</b><span class="error thema" style="display:none"> This field is required</span><br />
+      <input type="text" name="thema"/>
+    </li>
+    <li>
+      <b>Message:</b><span class="error message" style="display:none"> This field is required</span><br />
+      <textarea name="message" cols="70"></textarea>
+    </li>
+    <li>
+      <input type="submit" name="submit" value="submit"/>
+    </li>
+  </ul>
+<% end %>
